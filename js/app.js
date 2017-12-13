@@ -11,7 +11,16 @@ var hello = new Vue({
             {name:"Renato"},
             {name:"Ana"},
             {name:"Laurinha"}
-        ]
+        ],
+        //Metodos - funcoes para eventos para html
+        newElement:'',
+        elements:[]
+    },
+    methods:{
+        addElement: function (e) {
+            console.log(e);
+
+        }
     }
 }
 

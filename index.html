@@ -22,6 +22,16 @@
             </li>
         </ul>
     </div>
+    <div class="row">
+        <h1>My list elements</h1>
+        <input class="form-control" type="text" v-model="newElements" v-on:keyup.enter="addElement">
+        <ul>
+            <li v-for="element in elements">
+                {{ element.title }}
+
+            </li>
+        </ul>
+    </div>
 
 
 </div>
