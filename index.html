@@ -8,6 +8,55 @@
 
 </head>
 <body>
+<div class="container" id="app">
+    <div class="row">
+        <h1>Books</h1>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>value</th>
+                    <th>Description</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr v-for="book in books">
+                    <td>{{book.id}}</td>
+                    <td>{{book.title}}</td>
+                    <td>{{book.value}}</td>
+                    <td>{{book.description}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+</div>
+
+<script src="node_modules/vue/dist/vue.js"></script>
+<script src="node_modules/vue-resource/dist/vue-resource.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Books</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+
+</head>
+<body>
 <div class="container" id="hello">
     <div class="row">
         <h1>{{ msg }}</h1>
@@ -24,14 +73,48 @@
     </div>
     <div class="row">
         <h1>My list elements</h1>
-        <input class="form-control" type="text" v-model="newElements" v-on:keyup.enter="addElement">
+        <input class="form-control" type="text" v-model="newElement" v-on:keyup.enter="addElement">
         <ul>
             <li v-for="element in elements">
                 {{ element.title }}
-
+                <a href="#" v-on:click="removeElement($event,$index)">X</a>
             </li>
         </ul>
     </div>
+    <!--botao com a mensagem alert que definimos-->
+    <!--<div class="row">
+        <h1>v-on</h1>
+        <button v-on:click="myClick">click</button>
+        <button @click="myClick">@click</button>
+        <input type="text" @keyup="myKeyUp" placeholder="myKeyUp">
+        <input type="text" @keyup.enter="myKeyUp" placeholder="myKeyUp.enter">
+        <!--<input type="text" @keyup.13="myKeyUp" placeholder="myKeyUp.enter"> pode usar no lugar do enter codigo do teclado no caso o 13--><!--
+    </div>
+
+    <div class="row">
+        <h1>v-bind</h1>
+        <p v-bind:class="{ 'text-danger': 2===1, 'text-info': true }">text</p>
+        <p :class="{ 'text-danger': 2===1, 'text-info': true }">:text</p>
+        <p :style="{fontSize:30 + 'px'}">Style</p>
+        <p :style="{'font-Size':30 + 'px'}">:Style</p>
+        <p :style="[objectA,objectB]">Object A and B</p>
+        <p v-bind:=" {id: 1===1, name:true} ">bind attribute</p>
+    </div>
+
+    <div class="row">
+        <h1>v-model</h1>
+        <ul>
+            <li v-for="myList in myListForm">
+                {{ myList.name }} - {{ myList.email }}
+            </li>
+
+        </ul>
+        <input type="text" v-model="myForm.name" placeholder="Name">
+        <input type="text" v-model="myForm.email" placeholder="Email">
+        <button @click="addForm">Add</button>
+    </div>
+
+    <br><br><br>
 
 
 </div>
@@ -42,3 +125,4 @@
 
 </body>
 </html>
+-->
